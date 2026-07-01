@@ -1,21 +1,3 @@
-// Mobile hamburger menu toggle
-(function () {
-    var hamburger = document.getElementById('hamburger');
-    var navLinks = document.getElementById('navLinks');
-
-    hamburger.addEventListener('click', function () {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('open');
-        });
-    });
-})();
-
 (function () {
     const ORIGINAL_SRC = 'images/roy.jpeg';
     const img = document.getElementById('profileImg');

@@ -57,6 +57,37 @@ nav {
     color: #e94560;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #eee;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
 /* Hero */
 .hero {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -404,7 +435,36 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1a1a2e;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+        border-top: 1px solid #2a2a4a;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
     .hero-content {
         flex-direction: column;
         text-align: center;
@@ -412,10 +472,6 @@ footer {
 
     .hero-links {
         justify-content: center;
-    }
-
-    .nav-links {
-        gap: 1rem;
     }
 
     .hero-text h1 {
@@ -428,5 +484,72 @@ footer {
 
     .contact-info {
         grid-template-columns: 1fr;
+    }
+
+    .profile-pic {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+
+    .project-card ul {
+        padding-left: 1.2rem;
+    }
+
+    .about-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .skill-card {
+        padding: 1.2rem;
+    }
+
+    .edu-card {
+        padding: 1.25rem;
+    }
+
+    .contact-info p,
+    .contact-link {
+        padding: 0.85rem;
+        font-size: 0.85rem;
+    }
+
+    .about-summary p {
+        font-size: 0.95rem;
     }
 }
